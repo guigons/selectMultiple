@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<!-- Developed by Guilherme Gonsalves - 05/09/2016 -->
+<html ng-app="selectMultiple">
+<head>
+	<meta charset="utf-8">
+	<title>Multiple Select Option - Compliance NG-MODEL</title>
+	<link rel="stylesheet" type="text/css" href="lib/bootstrap/dist/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="css/select.css">
+	<script src="lib/angular/angular.min.js"></script>
+	<script src="js/app.js"></script>
+	<script src="js/controllers/home.ctrl.js"></script>
+	<script src="js/filters/multipleFilter.js"></script>
+	<script src="js/directives/uiSelectDirective.js"></script>
+</head>
+<body style="padding: 20px" ng-controller="main.ctrl">
+
+	<h4>Multiple Select Option - Compliance NG-MODEL</h4>
+
+	{{query}}<br>
+
+	<table>
+		<tr>
+			<th style="width: 300px">Nome</th>
+			<th style="width: 300px">Cidade</th>
+			<th style="width: 300px">Cor dos Olhos</th>
+			<th style="width: 300px">Profession</th>
+		</tr>
+		<tr>
+			<td><input type="text" name="name" ng-model="query.name" style="width: 80%; height: 20px;"></td>
+			<td>
+				<ui-select  ng-model="query.city" 
+                			options="filter.city"
+                			alloptionstr="Todos" 
+               	 			width="80%">
+    			</ui-select>
+    		</td>
+			<td>
+				<ui-select  ng-model="query.eyesColor" 
+                			options="filter.eyesColor"
+                			alloptionstr="Todos" 
+               	 			width="80%">
+    			</ui-select>
+    		</td>
+    		<td>
+				<ui-select  ng-model="query.profession" 
+                			options="filter.profession"
+                			typeoptions="OBJECT"
+                			alloptionstr="Todos" 
+               	 			width="80%">
+    			</ui-select>
+    		</td>
+		</tr>
+		<tr ng-repeat="pessoa in pessoas | multipleFilter:query">
+			<td>{{pessoa.name}}</td>
+			<td>{{pessoa.city}}</td>
+			<td>{{pessoa.eyesColor}}</td>
+			<td>{{pessoa.profession}}</td>
+		</tr>
+	</table>
+
+</body>
+</html>

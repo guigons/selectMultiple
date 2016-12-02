@@ -1,0 +1,18 @@
+<div class="multiselect" style="width: {{width}}">
+    <div class="selectBox" ng-click="open()" style="width: {{width}}">
+        <select>
+            <option>{{display}}</option>
+        </select>
+        <div class="overSelect"></div>
+    </div>
+    <div id="checkboxes" ng-show="isOpened" style="width: {{width}}">
+        <div>
+            <input ng-model="selectedAll" type="checkbox" ng-click="allSetUnset()" name="{{alloptionstr}}"/>
+            <label>{{alloptionstr}}</label> 
+        </div>
+        <div ng-repeat="option in options">
+            <input ng-model="selected" type="checkbox" ng-click="clickOption(option)" name="{{option}}"/>
+            <label>{{option}}</label> 
+        </div>
+    </div>
+</div>

@@ -1,0 +1,14 @@
+{
+  "name": "selectMultiple",
+  "authors": [
+    "Guilherme Morais Gonsalves"
+  ],
+  "description": "Select Html Component With Multiple Options - Compliance with NG-MODEL",
+  "main": "index.html",
+  "license": "MIT",
+  "homepage": "",
+  "dependencies": {
+    "angular": "1.5.8",
+    "bootstrap": "3.3.7"
+  }
+}

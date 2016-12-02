@@ -1,0 +1,41 @@
+.multiselect {
+    position: relative;
+}
+.selectBox {
+    position: relative;
+}
+.selectBox select {
+    width: 100%;
+    font-weight: bold;
+}
+.overSelect {
+    position: absolute;
+    left: 0; right: 0; top: 0; bottom: 0;
+}
+
+#checkboxes {
+    background-color: #f4f6f9;
+    position: absolute;
+    z-index:100;
+    border: 1px #dadada solid;
+    text-align: left;
+    padding: 2px 5px 2px 5px;
+}
+
+#checkboxes input {
+    float:left;
+    cursor: pointer;
+}
+
+#checkboxes label {
+    margin-left: 3px;
+    font-weight: normal;
+    /*display: block;*/
+}
+#checkboxes label:hover {
+    font-weight: bold;
+    color: #0070d2;
+}
+
+
+
